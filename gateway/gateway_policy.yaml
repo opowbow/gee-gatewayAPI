@@ -1,0 +1,13 @@
+kind: GCPGatewayPolicy
+apiVersion: networking.gke.io/v1
+metadata:
+  name: gp-tls-12
+  namespace: ns-gateway
+spec:
+  default:
+    sslPolicy: sslp-tls-12
+  targetRef:
+    group: "gateway.networking.k8s.io"
+    kind: Gateway
+    name: op-gateway
+    namespace: ns-gateway
